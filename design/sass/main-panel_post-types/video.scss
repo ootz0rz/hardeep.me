@@ -5,9 +5,12 @@
 @import "fonts";
 
 .post {
+	$video_border_radius: $post_size/30;
 	&.video {
-		background-color: #333;
+		background-color: #434343;
 		color: #fff;
+
+		@include border-radius($video_border_radius);
 
 		// style the image itself
 		.post-image {
@@ -58,6 +61,8 @@
 
 			opacity: 0.3;
 			background: url(../img/scratches.png) top left repeat;
+
+			@include border-radius($video_border_radius);
 		}
 
 		// play overlay...
