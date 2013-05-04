@@ -46,8 +46,40 @@ $post_size_L: ($gridColumnWidth * ($numcol * 2)) + ($gridGutterWidth * (($numcol
 
 			background-color: #000;
 			background-size: cover;
-			background-position: bottom right;
 			height: $post_size - $gridGutterWidth*4;
+		}
+
+		$post_title_size: 3em;
+		.post-title, .post-date {
+			font-family: $FONT_digital_readout;
+			font-size: $post_title_size;
+			color: #f86c1d;
+
+			margin: 0;
+			padding: 0;
+			position: relative;
+
+			$textshadow_col: #000;
+			@include text-shadow(
+					-1px -1px 0 $textshadow_col,  
+					1px -1px 0 $textshadow_col,
+					-1px 1px 0 $textshadow_col,
+					1px 1px 0 $textshadow_col
+			);
+		}
+
+		.post-title {
+			left: $post_title_size / 6 / 2;
+
+			float: left;
+		}
+
+		.post-date {
+			top: $post_title_size / 6 / 1.5;
+			right: $post_title_size / 6 / 1.5;
+			font-size: $post_title_size / 1.5;
+
+			float: right;
 		}
 
 		.post-description {
@@ -59,6 +91,7 @@ $post_size_L: ($gridColumnWidth * ($numcol * 2)) + ($gridGutterWidth * (($numcol
 		}
 
 		// cellophane tape-ish kinda thingy
+		// basic idea via http://cssdemos.tupence.co.uk/before.htm#sticky
 		&:before {
 			content: url(../img/tape.png);
 			display: block;
@@ -77,18 +110,23 @@ $post_size_L: ($gridColumnWidth * ($numcol * 2)) + ($gridGutterWidth * (($numcol
 // rotate photo posts semi randomly
 .posts-container {
 	.post.photo:nth-child(even) {
+		.post-image { background-position: bottom right; }
 		@include rotate3d(-1deg);
 	}
 	.post.photo:nth-child(odd) {
+		.post-image { background-position: bottom left; }
 		@include rotate3d(1deg);
 	}
 	.post.photo:nth-child(3n) {
+		.post-image { background-position: top right; }
 		@include rotate3d(-2deg);
 	}
 	.post.photo:nth-child(5n) {
+		.post-image { background-position: top left; }
 		@include rotate3d(2deg);
 	}
 	.post.photo:nth-child(8n) {
+		.post-image { background-position: center center; }
 		@include rotate3d(0.5deg);
 	}
 }

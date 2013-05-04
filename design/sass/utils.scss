@@ -8,3 +8,7 @@
        -o-transform: rotate($degrees);
           transform: rotate($degrees);
 }
+
+@mixin text-shadow($text-shadow...) {
+	text-shadow: $text-shadow;
+}

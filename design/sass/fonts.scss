@@ -4,7 +4,7 @@
   font-style: normal;
   font-weight: normal;
   src: url("fonts/Sue_Ellen_Francisco/SueEllenFrancisco.ttf"); }
-  
+
 @font-face {
   font-family: 'Reenie Beanie';
   font-style: normal;
@@ -23,6 +23,12 @@
   font-weight: normal;
   src: url("fonts/Just_Me_Again_Down_Here/JustMeAgainDownHere.ttf"); }
 
+@font-face {
+  font-family: 'Digital Readout';
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/digital-readout/SFDigitalReadout-Heavy.ttf"); }
+
 // font vars
 @import "bootstrap/variables";
 
@@ -30,3 +36,4 @@ $FONT_sue_ellen_francisco: 'Sue Ellen Francisco', $sansFontFamily;
 $FONT_reenie_beanie: 'Reenie Beanie', $sansFontFamily;
 $FONT_schoolbell: 'Schoolbell', $sansFontFamily;
 $FONT_just_me_again: 'Just Me Again Down Here', $sansFontFamily;
+$FONT_digital_readout: 'Digital Readout', $monoFontFamily;
