@@ -5,9 +5,15 @@
 @import "fonts";
 
 .post {
+	$blog_border_radius: $post_size/30;
 	&.blog {
-		$blog_post_color: #fffcb3;
+		$blog_post_color: #F9EFAF;
+		$blog_post_color2: #F7E98D;
 		background-color: $blog_post_color;
+
+		@include border-radius($blog_border_radius);
+
+		@include gradient-vertical($blog_post_color, $blog_post_color2);
 
 		@include transition(all 0.2s linear);
 		@include box-shadow(none);
@@ -17,7 +23,7 @@
 			@include box-shadow(none);
 		}
 
-		$fold_size: 2em;
+		$fold_size: 1.5em;
 		&:after {
 			content:'';
 			position:absolute;
@@ -36,10 +42,10 @@
 			border-right: $pcolor_1 $fold_size solid;
 
 			// bg color of fold + fold size
-			border-bottom: darken($blog_post_color, 25) $fold_size solid;
+			border-bottom: darken($blog_post_color, 20) $fold_size solid;
 
 			// bg color of fold
-			border-left: darken($blog_post_color, 25) 0 solid;
+			border-left: darken($blog_post_color, 20) 0 solid;
 		}
 
 		// all the text
