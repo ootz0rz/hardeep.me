@@ -20,23 +20,23 @@
 
 		// rotate photo posts semi randomly
 		&:nth-child(even) {
-			.post-image { background-position: bottom right; }
+			//.post-image { background-position: bottom right; }
 			@include rotate3d(-1deg);
 		}
 		&:nth-child(odd) {
-			.post-image { background-position: bottom left; }
+			//.post-image { background-position: bottom left; }
 			@include rotate3d(1deg);
 		}
 		&:nth-child(3n) {
-			.post-image { background-position: top right; }
+			//.post-image { background-position: top right; }
 			@include rotate3d(-2deg);
 		}
 		&:nth-child(5n) {
-			.post-image { background-position: top left; }
+			//.post-image { background-position: top left; }
 			@include rotate3d(2deg);
 		}
 		&:nth-child(8n) {
-			.post-image { background-position: center center; }
+			//.post-image { background-position: center center; }
 			@include rotate3d(0.5deg);
 		}
 
@@ -55,6 +55,7 @@
 
 			background-color: #000;
 			background-size: cover;
+			background-position: center center;
 			height: $post_size - $gridGutterWidth*4;
 		}
 
