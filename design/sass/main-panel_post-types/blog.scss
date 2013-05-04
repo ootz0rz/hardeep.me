@@ -33,20 +33,31 @@
 		}
 
 		// all the text
+		$post_title_height: 40px;
 		.post-title, .post-date {
-
+			font-size: 1em;
+			line-height: $post_title_height;
+			padding: 0;
+			margin: 0;
 		}
 
 		.post-title {
-
+			float: left;
 		}
 
 		.post-date {
-
+			float: right;
 		}
 
 		.post-description {
+			float: left;
 
+			//white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+
+			height: $post_size - $post_title_height;
+			width: $post_size;
 		}
 	}
 }
