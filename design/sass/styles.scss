@@ -10,7 +10,7 @@
 @import "fonts";
 
 html, body { height: 100%; }
-.fill { min-height: 100%; }
+.fill { height: 100%; min-height: 100%; }
 .centerdiv { margin: 0 auto; }
 
 // TEMPORARY FOR LAYOUT
@@ -24,11 +24,18 @@ html, body { height: 100%; }
 // }
 // end TEMPORARY FOR LAYOUT
 
+// overall page style
+body {
+	background-color: $pcolor_1;
+}
+
 // layout panels
 $leftpanel_width: ($gridColumnWidth * 3) + ($gridGutterWidth * 2); // defined in bootstrap
 .left-panel {
 	width: $leftpanel_width - ($gridGutterWidth);
 	float: left;
+
+	position: fixed;
 }
 
 .main-panel {
