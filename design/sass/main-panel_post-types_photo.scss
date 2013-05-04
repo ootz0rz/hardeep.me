@@ -1,0 +1,99 @@
+.post {
+	&.photo {
+		background-image: url(../img/post_photo_polaroidtexture.png);
+		background-repeat: repeat;
+		background-color: #fff;
+		@include box-shadow(0 3px 6px rgba(0,0,0,.25));
+
+		// rotate photo posts semi randomly
+		&:nth-child(even) {
+			.post-image { background-position: bottom right; }
+			@include rotate3d(-1deg);
+		}
+		&:nth-child(odd) {
+			.post-image { background-position: bottom left; }
+			@include rotate3d(1deg);
+		}
+		&:nth-child(3n) {
+			.post-image { background-position: top right; }
+			@include rotate3d(-2deg);
+		}
+		&:nth-child(5n) {
+			.post-image { background-position: top left; }
+			@include rotate3d(2deg);
+		}
+		&:nth-child(8n) {
+			.post-image { background-position: center center; }
+			@include rotate3d(0.5deg);
+		}
+
+		// style the image itself
+		.post-image {
+			@extend .img-polaroid;
+
+			margin: $gridGutterWidth;
+			margin-bottom: 0;
+
+			background-color: #000;
+			background-size: cover;
+			height: $post_size - $gridGutterWidth*4;
+		}
+
+		// all the text
+		$post_title_size: 3em;
+		.post-title, .post-date {
+			font-family: $FONT_digital_readout;
+			font-size: $post_title_size;
+			color: #f86c1d;
+
+			margin: 0;
+			padding: 0;
+			position: relative;
+
+			$textshadow_col: #000;
+			@include text-shadow(
+					-1px -1px 0 $textshadow_col,  
+					1px -1px 0 $textshadow_col,
+					-1px 1px 0 $textshadow_col,
+					1px 1px 0 $textshadow_col
+			);
+		}
+
+		.post-title {
+			left: $post_title_size / 6 / 2;
+
+			float: left;
+		}
+
+		.post-date {
+			top: $post_title_size / 6 / 1.5;
+			right: $post_title_size / 6 / 1.5;
+			font-size: $post_title_size / 1.5;
+
+			float: right;
+		}
+
+		.post-description {
+			position: relative;
+			top: .4em;
+			font-size: 1.8em;
+			font-family: $FONT_sue_ellen_francisco;
+			text-align: center;
+		}
+
+		// cellophane tape-ish kinda thingy
+		// basic idea via http://cssdemos.tupence.co.uk/before.htm#sticky
+		&:before {
+			content: url(../img/tape.png);
+			display: block;
+			position: absolute;
+			left: -10px;
+			top: -5px;
+			width: $gridColumnWidth*1.5;
+			height: $gridColumnWidth/2;
+
+			//background-color: rgba(222,220,198,0.7);
+			@include rotate3d(-15deg);
+		}
+	}
+}
