@@ -3,20 +3,47 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<title>hardeep.me | {title}</title>
 
 		<script type="text/javascript" src="js/lib/jquery/jquery-1.9.1.min.js"></script>
 		<script type="text/javascript" src="js/lib/masonry/jquery.masonry.min.js"></script>
 
+		<!-- IE uglyness -->
+		<!--[if lt IE 9]>
+		<script type="text/javascript" src="js/lib/html5shiv/html5shiv-printshiv.js"></script>
+		<![endif]-->
+
 		<link href="css/styles.css" media="all" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
-		<div id="leftpanel">
+		<div id="leftpanel" class="left-panel">
+			<header>
+				hardeep.me
+			</header>
+			<nav id="main" class="sidebar-nav">
+				<ul class="nav nav-list">
+					<li class="menuitem stream">
+						<a href="">stream</a>
+					</li>
+					<li class="menuitem about">
+						<a href="">about</a>
+					</li>
+					<li class="menuitem contact">
+						<a href="">contact</a>
+					</li>
+				</ul>
+			</nav>
 			left panel
 		</div>
-		<div id="mainpanel">
-			main panel
+		<div id="mainpanel" class="main-panel">
+			<div class="container-fluid">
+				<div class="row-fluid">
+					main panel	
+				</div>
+			</div>
+		</div>
 		</div>
 	</body>
 </html>

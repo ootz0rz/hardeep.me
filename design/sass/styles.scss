@@ -1,2 +1,29 @@
+html { -webkit-font-smoothing: antialiased; }
+
+// might not need any of this fancyness in the end, but we'll keep it for now
+// Note: .clearfix already defined in bootstrap
 @import "bootstrap";
 @import "bootstrap-responsive";
+
+html, body { height: 100%; }
+.fill { min-height: 100%; }
+
+$leftpanel_width: ($gridColumnWidth * 3) + ($gridGutterWidth * 2); // defined in bootstrap
+
+.left-panel, .main-panel {
+	border-width: 1px;
+	border-style: solid;
+	border-color: #000;
+}
+
+.left-panel {
+	width: $leftpanel_width;
+	float: left;
+	height: 100%;
+}
+
+.main-panel {
+	padding-left: $leftpanel_width;
+}
+
+@import "responsive"
