@@ -7,6 +7,7 @@
 
 		<title>hardeep.me | {title}</title>
 
+		<script type="text/javascript" src="js/lib/modernizr/modernizr.custom.35836.js"></script>
 		<script type="text/javascript" src="js/lib/jquery/jquery-1.9.1.min.js"></script>
 		<script type="text/javascript" src="js/lib/masonry/jquery.masonry.min.js"></script>
 
@@ -38,12 +39,46 @@
 			left panel
 		</div>
 		<div id="mainpanel" class="main-panel">
-			<div class="container-fluid">
-				<div class="row-fluid">
-					main panel	
+				<div id="posts-container">
+					<article class="post default">
+						default
+					</article>
+					<article class="post video">
+						video
+					</article>
+					<article class="post github">
+						github
+					</article>
+					<article class="post project">
+						project
+					</article>
+					<article class="post forrst">
+						forrst
+					</article>
+					<article class="post photo">
+						photo
+					</article>
+					<article class="post blog">
+						blog
+					</article>
 				</div>
-			</div>
-		</div>
 		</div>
 	</body>
+	<script type="text/javascript">
+		var $container = $('#posts-container');
+		$container.imagesLoaded(function(){
+			$container.masonry({
+				itemSelector : '.post'
+				,columnWidth: 60
+				,gutterWidth: 20
+				/*
+				,columnWidth : function( containerWidth ) {
+					console.log("containerWidth", containerWidth, containerWidth / 12);
+					return containerWidth / 12;
+				}
+				*/
+				,isAnimated: !Modernizr.csstransitions
+			});
+		});
+	</script>
 </html>

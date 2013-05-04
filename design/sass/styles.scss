@@ -5,31 +5,37 @@ html { -webkit-font-smoothing: antialiased; }
 @import "config-colors";
 @import "bootstrap";
 @import "bootstrap-responsive";
+@import "lib-masonry";
 
 html, body { height: 100%; }
 .fill { min-height: 100%; }
 
-$leftpanel_width: ($gridColumnWidth * 3) + ($gridGutterWidth * 2); // defined in bootstrap
-
 // TEMPORARY FOR LAYOUT
-.left-panel, .main-panel {
+/*.left-panel, .main-panel, */.span3, .post {
 	border-width: 1px;
 	border-style: solid;
 	border-color: #000;
 }
+.span3, .post {
+	border-color: red;
+}
+// end TEMPORARY FOR LAYOUT
 
 // layout panels
+$leftpanel_width: ($gridColumnWidth * 3) + ($gridGutterWidth * 2); // defined in bootstrap
 .left-panel {
-	width: $leftpanel_width;
+	width: $leftpanel_width - ($gridGutterWidth);
 	float: left;
 	height: 100%;
 }
 
 .main-panel {
-	padding-left: $leftpanel_width;
+	padding-left: $leftpanel_width - ($gridGutterWidth/2);
+	height: 100%;
 }
 
 @import "left-panel";
 @import "main-panel";
+@import "main-panel_post-types";
 
 @import "responsive";

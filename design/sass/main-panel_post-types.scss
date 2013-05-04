@@ -1,0 +1,31 @@
+@import "config-colors";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+$numcol: 3;
+$post_size: ($gridColumnWidth * $numcol) + ($gridGutterWidth * ($numcol - 1));
+$post_size_L: ($gridColumnWidth * ($numcol * 2)) + ($gridGutterWidth * (($numcol * 2) - 1));
+
+.post {
+	height: $post_size;
+	float: left;
+
+	margin-top: $gridGutterWidth/2;
+	margin-bottom: $gridGutterWidth/2;
+
+	@include border-radius($post_size/40);
+
+	// individual post type styles
+	&.default 
+	,&.project
+	,&.github
+	,&.forrst
+	,&.blog
+	{
+		width: $post_size;
+	}
+
+	&.video, &.photo {
+		width: $post_size_L;
+	}
+}
