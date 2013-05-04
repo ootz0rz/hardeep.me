@@ -3,3 +3,6 @@
 */logs/!index.html
 */cache/*
 */cache/!index.html
+
+/design/css/.sass-cache
+/design/.sass-cache
