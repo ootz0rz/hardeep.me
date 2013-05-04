@@ -1,0 +1,32 @@
+// local font defs
+@font-face {
+  font-family: 'Sue Ellen Francisco';
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/Sue_Ellen_Francisco/SueEllenFrancisco.ttf"); }
+  
+@font-face {
+  font-family: 'Reenie Beanie';
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/Reenie_Beanie/ReenieBeanie.ttf"); }
+
+@font-face {
+  font-family: 'Schoolbell';
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/Schoolbell/Schoolbell.ttf"); }
+
+@font-face {
+  font-family: 'Just Me Again Down Here';
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/Just_Me_Again_Down_Here/JustMeAgainDownHere.ttf"); }
+
+// font vars
+@import "bootstrap/variables";
+
+$FONT_sue_ellen_francisco: 'Sue Ellen Francisco', $sansFontFamily;
+$FONT_reenie_beanie: 'Reenie Beanie', $sansFontFamily;
+$FONT_schoolbell: 'Schoolbell', $sansFontFamily;
+$FONT_just_me_again: 'Just Me Again Down Here', $sansFontFamily;

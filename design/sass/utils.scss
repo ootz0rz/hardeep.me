@@ -1,0 +1,10 @@
+// based on bootstrap/mixins/rotate()
+// added the translate3d to get webkit to make text render nicer
+// via http://stackoverflow.com/questions/6846953/wonky-text-anti-aliasing-when-rotating-with-webkit-transform-in-chrome
+@mixin rotate3d($degrees) {
+  -webkit-transform: rotate($degrees) translate3d( 0, 0, 0);
+     -moz-transform: rotate($degrees);
+      -ms-transform: rotate($degrees);
+       -o-transform: rotate($degrees);
+          transform: rotate($degrees);
+}

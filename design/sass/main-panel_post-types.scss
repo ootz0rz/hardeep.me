@@ -1,6 +1,9 @@
 @import "config-colors";
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
+@import "bootstrap/scaffolding";
+@import "utils";
+@import "fonts";
 
 $numcol: 3;
 $post_size: ($gridColumnWidth * $numcol) + ($gridGutterWidth * ($numcol - 1));
@@ -13,7 +16,7 @@ $post_size_L: ($gridColumnWidth * ($numcol * 2)) + ($gridGutterWidth * (($numcol
 	margin-top: $gridGutterWidth/2;
 	margin-bottom: $gridGutterWidth/2;
 
-	@include border-radius($post_size/40);
+	//@include border-radius($post_size/40);
 
 	// individual post type styles
 	&.default 
@@ -27,5 +30,65 @@ $post_size_L: ($gridColumnWidth * ($numcol * 2)) + ($gridGutterWidth * (($numcol
 
 	&.video, &.photo {
 		width: $post_size_L;
+	}
+
+	&.photo {
+		background-image: url(../img/post_photo_polaroidtexture.png);
+		background-repeat: repeat;
+		background-color: #fff;
+		@include box-shadow(0 3px 6px rgba(0,0,0,.25));
+
+		.post-image {
+			@extend .img-polaroid;
+
+			margin: $gridGutterWidth;
+			margin-bottom: 0;
+
+			background-color: #000;
+			background-size: cover;
+			background-position: bottom right;
+			height: $post_size - $gridGutterWidth*4;
+		}
+
+		.post-description {
+			position: relative;
+			top: .4em;
+			font-size: 1.8em;
+			font-family: $FONT_sue_ellen_francisco;
+			text-align: center;
+		}
+
+		// cellophane tape-ish kinda thingy
+		&:before {
+			content: url(../img/tape.png);
+			display: block;
+			position: absolute;
+			left: -10px;
+			top: -5px;
+			width: $gridColumnWidth*1.5;
+			height: $gridColumnWidth/2;
+
+			//background-color: rgba(222,220,198,0.7);
+			@include rotate3d(-15deg);
+		}
+	}
+}
+
+// rotate photo posts semi randomly
+.posts-container {
+	.post.photo:nth-child(even) {
+		@include rotate3d(-1deg);
+	}
+	.post.photo:nth-child(odd) {
+		@include rotate3d(1deg);
+	}
+	.post.photo:nth-child(3n) {
+		@include rotate3d(-2deg);
+	}
+	.post.photo:nth-child(5n) {
+		@include rotate3d(2deg);
+	}
+	.post.photo:nth-child(8n) {
+		@include rotate3d(0.5deg);
 	}
 }

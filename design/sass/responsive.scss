@@ -12,15 +12,7 @@
  
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
-	// no longer want a fixed sidebar at this point...
-	.sidebar-nav-fixed {
-		position: auto;
-		width: auto !important;
-	}
 
-	.row-fluid > .span-fixed-sidebar {
-		margin-left: auto;
-	}
 }
  
 /* Landscape phones and down */

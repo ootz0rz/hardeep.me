@@ -1,4 +1,4 @@
-html { -webkit-font-smoothing: antialiased; }
+* { -webkit-font-smoothing: antialiased; }
 
 // might not need any of this fancyness in the end, but we'll keep it for now
 // Note: .clearfix already defined in bootstrap
@@ -6,19 +6,22 @@ html { -webkit-font-smoothing: antialiased; }
 @import "bootstrap";
 @import "bootstrap-responsive";
 @import "lib-masonry";
+@import "utils";
+@import "fonts";
 
 html, body { height: 100%; }
 .fill { min-height: 100%; }
+.centerdiv { margin: 0 auto; }
 
 // TEMPORARY FOR LAYOUT
-/*.left-panel, .main-panel, */.span3, .post {
-	border-width: 1px;
-	border-style: solid;
-	border-color: #000;
-}
-.span3, .post {
-	border-color: red;
-}
+// /*.left-panel, .main-panel, */.span3, .post {
+// 	border-width: 1px;
+// 	border-style: solid;
+// 	border-color: #000;
+// }
+// .span3, .post {
+// 	border-color: red;
+// }
 // end TEMPORARY FOR LAYOUT
 
 // layout panels
@@ -26,12 +29,10 @@ $leftpanel_width: ($gridColumnWidth * 3) + ($gridGutterWidth * 2); // defined in
 .left-panel {
 	width: $leftpanel_width - ($gridGutterWidth);
 	float: left;
-	height: 100%;
 }
 
 .main-panel {
 	padding-left: $leftpanel_width - ($gridGutterWidth/2);
-	height: 100%;
 }
 
 @import "left-panel";

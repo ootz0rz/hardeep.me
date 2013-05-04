@@ -19,7 +19,7 @@
 		<link href="css/styles.css" media="all" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
-		<div id="leftpanel" class="left-panel">
+		<div id="leftpanel" class="left-panel fill">
 			<header>
 				omgz logo text
 			</header>
@@ -38,30 +38,49 @@
 			</nav>
 			left panel
 		</div>
-		<div id="mainpanel" class="main-panel">
-				<div id="posts-container">
-					<article class="post default">
-						default
-					</article>
-					<article class="post video">
-						video
-					</article>
-					<article class="post github">
-						github
-					</article>
-					<article class="post project">
-						project
-					</article>
-					<article class="post forrst">
-						forrst
-					</article>
-					<article class="post photo">
-						photo
-					</article>
-					<article class="post blog">
-						blog
-					</article>
-				</div>
+		<div id="mainpanel" class="main-panel fill">
+			<div id="posts-container" class="centerdiv posts-container">
+				<article class="post default">
+					default
+				</article>
+				<article class="post video">
+					video
+				</article>
+				<article class="post github">
+					github
+				</article>
+				<article class="post project">
+					project
+				</article>
+				<article class="post forrst">
+					forrst
+				</article>
+				<article class="post photo">
+					<div class="post-image" style="background-image:url('img/post-photo-ex.jpg')">
+						<h1 class="post-title">
+							my title
+						</h1>
+						<time pubdate="pubdate" class="post-date">2013/05/04</time>
+					</div>
+					<div class="post-description">
+						This is my description for photo 1.
+					</div>
+				</article>
+				<article class="post blog">
+					blog
+				</article>
+				<article class="post photo">
+					<div class="post-image" style="background-image:url('img/post-photo-ex.jpg')">
+						<h1 class="post-title">
+							my title
+						</h1>
+						<time pubdate="pubdate" class="post-date">2013/05/04</time>
+					</div>
+					<div class="post-description">
+						This is my description for photo 2.
+					</div>
+				</article>
+			</div>
 		</div>
 	</body>
 	<script type="text/javascript">
@@ -71,12 +90,7 @@
 				itemSelector : '.post'
 				,columnWidth: 60
 				,gutterWidth: 20
-				/*
-				,columnWidth : function( containerWidth ) {
-					console.log("containerWidth", containerWidth, containerWidth / 12);
-					return containerWidth / 12;
-				}
-				*/
+				,isFitWidth: true
 				,isAnimated: !Modernizr.csstransitions
 			});
 		});
