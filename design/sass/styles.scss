@@ -4,18 +4,21 @@ html { -webkit-font-smoothing: antialiased; }
 // Note: .clearfix already defined in bootstrap
 @import "bootstrap";
 @import "bootstrap-responsive";
+@import "config-colors";
 
 html, body { height: 100%; }
 .fill { min-height: 100%; }
 
 $leftpanel_width: ($gridColumnWidth * 3) + ($gridGutterWidth * 2); // defined in bootstrap
 
+// TEMPORARY FOR LAYOUT
 .left-panel, .main-panel {
 	border-width: 1px;
 	border-style: solid;
 	border-color: #000;
 }
 
+// layout panels
 .left-panel {
 	width: $leftpanel_width;
 	float: left;
@@ -26,4 +29,7 @@ $leftpanel_width: ($gridColumnWidth * 3) + ($gridGutterWidth * 2); // defined in
 	padding-left: $leftpanel_width;
 }
 
-@import "responsive"
+@import "left-panel";
+@import "main-panel";
+
+@import "responsive";
