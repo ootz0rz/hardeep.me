@@ -12,3 +12,8 @@
 @mixin text-shadow($text-shadow...) {
 	text-shadow: $text-shadow;
 }
+
+@import "bootstrap/variables";
+$_numcol: 3;
+$post_size: ($gridColumnWidth * $_numcol) + ($gridGutterWidth * ($_numcol - 1));
+$post_size_L: ($gridColumnWidth * ($_numcol * 2)) + ($gridGutterWidth * (($_numcol * 2) - 1));

@@ -1,3 +1,9 @@
+@import "config-colors";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "utils";
+@import "fonts";
+
 .post {
 	&.photo {
 		background-image: url(../img/post_photo_polaroidtexture.png);
@@ -29,7 +35,13 @@
 
 		// style the image itself
 		.post-image {
-			@extend .img-polaroid;
+			cursor: pointer !important;
+
+			padding: 4px;
+			background-color: #fff;
+			border: 2px solid #ccc;
+			border: 1px solid rgba(0,0,0,.2);
+			@include box-shadow(0 1px 3px rgba(0,0,0,.1));
 
 			margin: $gridGutterWidth;
 			margin-bottom: 0;
@@ -37,11 +49,43 @@
 			background-color: #000;
 			background-size: cover;
 			height: $post_size - $gridGutterWidth*4;
+
+			// overlay...
+			&:after {
+				content: '';
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+
+				padding: 4px;
+				margin: $gridGutterWidth;
+				margin-bottom: 0;
+				height: $post_size - $gridGutterWidth*4;
+
+				border: 2px solid #ccc;
+				border: 1px solid rgba(0,0,0,.2);
+
+				opacity: 1;
+				@include transition-duration(0.5s);
+
+				// http://www.iconfinder.com/icondetails/16966/128/find_magnifying_glass_search_zoom_icon
+				background: url(../img/glass.png) center center no-repeat #000;
+				opacity: 0;
+			}
+
+			&:hover:after {
+				opacity: 0.5;
+				@include transition-duration(0.5s);
+			}
 		}
 
 		// all the text
 		$post_title_size: 3em;
 		.post-title, .post-date {
+			z-index: 1;
+
 			font-family: $FONT_digital_readout;
 			font-size: $post_title_size;
 			color: #f86c1d;

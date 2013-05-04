@@ -1,13 +1,7 @@
 @import "config-colors";
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
-@import "bootstrap/scaffolding";
 @import "utils";
-@import "fonts";
-
-$numcol: 3;
-$post_size: ($gridColumnWidth * $numcol) + ($gridGutterWidth * ($numcol - 1));
-$post_size_L: ($gridColumnWidth * ($numcol * 2)) + ($gridGutterWidth * (($numcol * 2) - 1));
 
 .post {
 	height: $post_size;
