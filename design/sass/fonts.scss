@@ -29,6 +29,24 @@
   font-weight: normal;
   src: url("fonts/digital-readout/SFDigitalReadout-Heavy.ttf"); }
 
+@font-face {
+  font-family: 'Love Ya Like A Sister';
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/Love_Ya_Like_A_Sister/LoveYaLikeASister.ttf"); }
+
+@font-face {
+  font-family: 'Pompiere';
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/Pompiere/Pompiere-Regular.ttf"); }
+
+@font-face {
+  font-family: 'Press Start 2P';
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/Press_Start_2P/PressStart2P-Regular.ttf"); }
+
 // font vars
 @import "bootstrap/variables";
 
@@ -37,3 +55,7 @@ $FONT_reenie_beanie: 'Reenie Beanie', $sansFontFamily;
 $FONT_schoolbell: 'Schoolbell', $sansFontFamily;
 $FONT_just_me_again: 'Just Me Again Down Here', $sansFontFamily;
 $FONT_digital_readout: 'Digital Readout', $monoFontFamily;
+
+$FONT_pompiere: 'Pompiere', $sansFontFamily;
+$FONT_lovelikesister: 'Love Ya Like A Sister', $sansFontFamily;
+$FONT_pressstart: 'Press Start 2P', $sansFontFamily;

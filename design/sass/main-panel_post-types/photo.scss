@@ -18,26 +18,71 @@
 			@include box-shadow(0px 0px 10px rgba(0,0,0,.7));
 		}
 
-		// rotate photo posts semi randomly
+		// rotate photo posts semi randomly + position tape
 		&:nth-child(even) {
 			//.post-image { background-position: bottom right; }
 			@include rotate3d(-1deg);
+
+			&:before {
+				left: $post_size_L - $gridColumnWidth;
+				top: 0;
+				@include rotate3d(15deg);
+			}
 		}
 		&:nth-child(odd) {
 			//.post-image { background-position: bottom left; }
 			@include rotate3d(1deg);
+
+			&:before {
+				left: -15px;
+				top: -5px;
+				@include rotate3d(-15deg);
+			}
 		}
 		&:nth-child(3n) {
 			//.post-image { background-position: top right; }
 			@include rotate3d(-2deg);
+
+			&:before {
+				left: $post_size_L - $gridColumnWidth;
+				top: 0;
+				@include rotate3d(15deg);
+			}
 		}
 		&:nth-child(5n) {
 			//.post-image { background-position: top left; }
 			@include rotate3d(2deg);
+
+			&:before {
+				left: -15px;
+				top: -5px;
+				@include rotate3d(-15deg);
+			}
 		}
 		&:nth-child(8n) {
 			//.post-image { background-position: center center; }
-			@include rotate3d(0.5deg);
+			@include rotate3d(0deg);
+
+			&:before {
+				left: $post_size - $gridColumnWidth*(1.5/2) + $gridGutterWidth;
+				top: -$gridColumnWidth/4;
+				@include rotate3d(0deg);
+			}
+		}
+
+		// cellophane tape-ish kinda thingy
+		// basic idea via http://cssdemos.tupence.co.uk/before.htm#sticky
+		&:before {
+			content: url(../img/tape.png);
+			display: block;
+			position: absolute;
+			left: -15px;
+			top: -5px;
+			width: $gridColumnWidth*1.5;
+			height: $gridColumnWidth/2;
+
+			//background-color: rgba(222,220,198,0.7);
+			@include rotate3d(-15deg);
 		}
 
 		// style the image itself
@@ -90,7 +135,7 @@
 		}
 
 		// all the text
-		$post_title_size: 3em;
+		$post_title_size: 2em;
 		.post-title, .post-date {
 			z-index: 1;
 
@@ -118,9 +163,9 @@
 		}
 
 		.post-date {
-			top: $post_title_size / 6 / 1.5;
+			top: $post_title_size / 6;
 			right: $post_title_size / 6 / 1.5;
-			font-size: $post_title_size / 1.5;
+			font-size: $post_title_size;
 
 			float: right;
 		}
@@ -131,21 +176,6 @@
 			font-size: 1.8em;
 			font-family: $FONT_sue_ellen_francisco;
 			text-align: center;
-		}
-
-		// cellophane tape-ish kinda thingy
-		// basic idea via http://cssdemos.tupence.co.uk/before.htm#sticky
-		&:before {
-			content: url(../img/tape.png);
-			display: block;
-			position: absolute;
-			left: -10px;
-			top: -5px;
-			width: $gridColumnWidth*1.5;
-			height: $gridColumnWidth/2;
-
-			//background-color: rgba(222,220,198,0.7);
-			@include rotate3d(-15deg);
 		}
 	}
 }

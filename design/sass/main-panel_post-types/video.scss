@@ -9,14 +9,6 @@
 		background-color: #000;
 		color: #fff;
 
-		@include transition(all 0.2s linear);
-		@include box-shadow(0px 0px 5px rgba(0,0,0,.25));
-
-		&:hover {
-			@include transition(all 0.2s linear);
-			@include box-shadow(0px 0px 10px rgba(0,0,0,.7));
-		}
-
 		// style the image itself
 		.post-image {
 			background-color: #000;
@@ -50,29 +42,48 @@
 		}
 
 		// all the text
-		$post_title_size: 3em;
+		$post_title_size: 2em;
 		.post-title, .post-date {
 			margin: 0;
 			padding: 0;
 			position: relative;
+
+			font-family: $FONT_pompiere;
+			font-size: $post_title_size;
+
+			$textshadow_col: #000;
+			@include text-shadow(
+					-1px -1px 0 $textshadow_col,  
+					1px -1px 0 $textshadow_col,
+					-1px 1px 0 $textshadow_col,
+					1px 1px 0 $textshadow_col
+			);
 		}
 
 		.post-title {
+			left: $post_title_size / 6 / 2;
 			float: left;
 		}
 
 		.post-date {
+			$post_date_size: $post_title_size * .75;
+
 			float: right;
+			font-size: $post_date_size;
+			top: $post_date_size / 4;
+			right: $post_date_size / 4;
 		}
 
 		.post-description {
 			position: relative;
 			top: -2.5em;
-			height: 2.5em;
+			height: 2em;
+			padding-top: 0.5em;
 			margin-left: $gridGutterWidth*1.5;
 			margin-right: $gridGutterWidth*1.5;
-			
-			font-size: 1em;
+
+			font-family: $FONT_pompiere;
+			font-size: 1.5em;
 			text-align: center;
 
 
