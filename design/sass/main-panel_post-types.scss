@@ -7,8 +7,11 @@
 	height: $post_size;
 	float: left;
 
-	margin-top: $gridGutterWidth/2;
-	margin-bottom: $gridGutterWidth/2;
+	margin: $gridGutterWidth/2;
+	//margin-top: $gridGutterWidth/2;
+	//margin-bottom: $gridGutterWidth/2;
+
+	cursor: pointer !important;
 
 	//@include border-radius($post_size/40);
 
