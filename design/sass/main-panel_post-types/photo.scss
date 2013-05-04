@@ -73,7 +73,8 @@
 		// cellophane tape-ish kinda thingy
 		// basic idea via http://cssdemos.tupence.co.uk/before.htm#sticky
 		&:before {
-			content: url(../img/tape.png);
+			//content: url(../img/tape.png);
+			content: '';
 			display: block;
 			position: absolute;
 			left: -15px;
@@ -81,7 +82,7 @@
 			width: $gridColumnWidth*1.5;
 			height: $gridColumnWidth/2;
 
-			//background-color: rgba(222,220,198,0.7);
+			background-color: rgba(222,220,198,0.7);
 			@include rotate3d(-15deg);
 		}
 
@@ -141,7 +142,8 @@
 
 			font-family: $FONT_digital_readout;
 			font-size: $post_title_size;
-			color: #f86c1d;
+			//color: #f86c1d;
+			color: #fff;
 
 			margin: 0;
 			padding: 0;
