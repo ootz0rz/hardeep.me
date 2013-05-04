@@ -62,7 +62,7 @@
 
 		// play overlay...
 		&:after {
-			z-index: 20;
+			z-index: 14;
 
 			content: '';
 			position: absolute;
@@ -85,6 +85,8 @@
 		// all the text
 		$post_title_size: 2em;
 		.post-title, .post-date {
+			z-index: 20;
+
 			margin: 0;
 			padding: 0;
 			position: relative;
@@ -120,7 +122,7 @@
 
 			position: relative;
 			top: -2.5em;
-			height: 2em;
+			height: 1.5em;
 			padding-top: 0.5em;
 			margin-left: $gridGutterWidth*1.5;
 			margin-right: $gridGutterWidth*1.5;
