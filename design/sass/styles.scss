@@ -2,9 +2,9 @@ html { -webkit-font-smoothing: antialiased; }
 
 // might not need any of this fancyness in the end, but we'll keep it for now
 // Note: .clearfix already defined in bootstrap
+@import "config-colors";
 @import "bootstrap";
 @import "bootstrap-responsive";
-@import "config-colors";
 
 html, body { height: 100%; }
 .fill { min-height: 100%; }
