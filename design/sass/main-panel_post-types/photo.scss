@@ -76,16 +76,16 @@
 			border: 1px solid rgba(0,0,0,.2);
 
 			// http://www.iconfinder.com/icondetails/16966/128/find_magnifying_glass_search_zoom_icon
-			background: url(../img/glass.png) center center no-repeat #000;
+			background: url(../img/glass.png) center center no-repeat;
 
-			opacity: 0.2;
+			opacity: 0.3;
 			@include transition-duration(0.5s);
 		}
 
 		&:hover:after {
-			opacity: 1;
+			//opacity: 1;
 			@include transition-duration(0.5s);
-			opacity: 0;
+			opacity: 0.65;
 		}
 
 		// all the text
