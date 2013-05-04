@@ -15,6 +15,23 @@
 
 		@include gradient-vertical($blog_post_color, $blog_post_color2);
 
+		// paper lines
+		&:before {
+			//z-index: 7;
+
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+
+			opacity: 0.1;
+			background: url(../img/paperlines.png) top left repeat;
+
+			@include border-radius($blog_border_radius);
+		}
+
 		// all the text
 		.post-title, .post-date {
 
