@@ -15,39 +15,6 @@
 
 		@include gradient-vertical($blog_post_color, $blog_post_color2);
 
-		@include transition(all 0.2s linear);
-		@include box-shadow(none);
-
-		&:hover {
-			@include transition(all 0.2s linear);
-			@include box-shadow(none);
-		}
-
-		$fold_size: 1.5em;
-		&:after {
-			content:'';
-			position:absolute;
-
-			@include box-shadow(-1px 1px 3px -4px rgba(0,0,0,0.2));
-		}
-		
-		&:after{
-			top:0;
-			right:0;
-
-			// bg color of container
-			border-top: $pcolor_1 0 solid;
-
-			// bg color of container + fold size
-			border-right: $pcolor_1 $fold_size solid;
-
-			// bg color of fold + fold size
-			border-bottom: darken($blog_post_color, 20) $fold_size solid;
-
-			// bg color of fold
-			border-left: darken($blog_post_color, 20) 0 solid;
-		}
-
 		// all the text
 		.post-title, .post-date {
 
